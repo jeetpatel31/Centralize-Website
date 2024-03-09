@@ -12,7 +12,7 @@ body {
 canvas {
   width: 100vw;
   height: 40vh;
-  margin-top: 5%;
+  margin-top: 0%;
 }
 
 
@@ -24,6 +24,9 @@ canvas {
   justify-content: space-around; /* This will space out the sections evenly */
   align-items: center;
   height: 10vh; /* Height for the sections area */
+  margin-bottom: 40px; /* Adjust the value as needed */
+  font-size: 10px;
+
 }
 /* Style for each section */
 .section {
@@ -41,7 +44,17 @@ canvas {
 
 
 
+  a.section {
+            color: inherit; /* This makes the text color inherit from the parent */
+            text-decoration: none; /* This removes the underline from links */
+        }
 
+        /* Add styles for the website name */
+        .site-name {
+            text-align: center;
+            font-size: 30px;
+            margin: 20px 0;
+        }
 
 
 
@@ -72,6 +85,10 @@ canvas {
 
 </head>
 <body>
+
+    <div class="site-name">Info ALL</div>
+
+
 <canvas id="scene"></canvas>
 
 
@@ -83,21 +100,37 @@ canvas {
 
     <a href="crime_rate.html" class="section" target="_blank">
         <h2>Crime Rate</h2>
-        <p>Details...</p>
     </a>
    
     <a href="pollution.html" class="section" target="_blank">
       <h2>Pollution Rate</h2>
-      <p>Details...</p>
     </a>
     
-    <a href="travel.html" class="section" target="_blank">
-        <h2>Most Travel Country By Rank</h2>
-      <p>Details...</p>
+    <a href="suicide.html" class="section" target="_blank">
+        <h2>Suicide Rates</h2>
     </a>
     
 
 </div>
+
+<div class="sections-container">
+
+    <a href="travel.html" class="section" target="_blank">
+        <h2>Most Travel Country By Rank</h2>
+      </a>
+   
+    <a href="happy.html" class="section" target="_blank">
+      <h2>Happiness Index</h2>
+    </a>
+    
+    <a href="sports.html" class="section" target="_blank">
+      <h2>Most Popular Sports Rank</h2>
+    </a>
+    
+
+</div>
+
+
 
 
 
@@ -175,7 +208,7 @@ class Dot {
     
     this.scaleProjected = PERSPECTIVE / (PERSPECTIVE + this.z);
     // Adjust the x projection to position globes next to each other
-    const TOTAL_GLOBES = 3;
+    const TOTAL_GLOBES = 4;
     const TOTAL_WIDTH = GLOBE_RADIUS * 2 * TOTAL_GLOBES + GLOBE_DISTANCE * (TOTAL_GLOBES - 1);
     const START_X = PROJECTION_CENTER_X - TOTAL_WIDTH / 2 + GLOBE_RADIUS;
     this.xProjected = (this.x * this.scaleProjected) + START_X + (GLOBE_DISTANCE + GLOBE_RADIUS * 2) * (this.globeIndex - 1);
@@ -193,7 +226,7 @@ class Dot {
 function createDots() {
   dots.length = 0;
   
-  for (let globeIndex = 1; globeIndex <= 3; globeIndex++) { // Loop through three globes
+  for (let globeIndex = 1; globeIndex <= 4; globeIndex++) { // Loop through three globes
     for (let i = 0; i < DOTS_AMOUNT / 3; i++) { // Adjust the amount of dots per globe
       dots.push(new Dot(globeIndex));
     }
@@ -203,7 +236,9 @@ function createDots() {
 const countries = [
   { name: "USA", population: "331,002,651" },
   { name: "CHINA", population: "1,439,323,776" },
-  { name: "INDIA", population: "1,380,004,385" }
+  { name: "INDIA", population: "1,380,004,385" },
+  { name: "UK", population: "67,886,011" } // Add UK data
+
 ];
 
 function drawText() {
