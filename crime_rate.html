@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crime Rates</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f0f0f0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Crime Rates</h1>
+  <table id="crimeTable">
+    <!-- Table data will be inserted here -->
+  </table>
+</div>
+
+<script>
+  fetch('crime.csv')
+    .then(response => response.text())
+    .then(csv => {
+      const rows = csv.split('\n');
+      let html = '<tr>';
+      
+      // Assume first row is the header
+      const headers = rows[0].split(',');
+      headers.forEach(header => {
+        html += `<th>${header.trim()}</th>`;
+      });
+      html += '</tr>';
+
+      // Process the remaining rows
+      for(let i = 1; i < rows.length; i++) {
+        if(rows[i].trim() === '') continue; // skip empty rows
+        html += '<tr>';
+        const cells = rows[i].split(',');
+        cells.forEach(cell => {
+          html += `<td>${cell.trim()}</td>`;
+        });
+        html += '</tr>';
+      }
+
+      document.getElementById('crimeTable').innerHTML = html;
+    })
+    .catch(error => {
+      console.error('Error loading the CSV file:', error);
+      document.getElementById('crimeTable').innerHTML = '<tr><td>Error loading data...</td></tr>';
+    });
+</script>
+</body>
+</html>
