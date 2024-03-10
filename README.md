@@ -6,6 +6,9 @@ The site dynamically loads and presents data on individual topic pages, such as 
 
 Overall, 'Info ALL' aims to serve as a comprehensive resource for users seeking reliable and up-to-date information on critical global issues, packaged in an intuitive and visually appealing web experience.
 
+
+https://github.com/jeetpatel31/Centralize-Website/assets/96985261/bb607031-8a90-4e02-83c0-b14170343df9
+
 ![alt text](image.png)
 ![alt text](image-1.png)
 ![alt text](image-2.png)
