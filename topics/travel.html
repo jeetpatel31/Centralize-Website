@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suicide Rate</title>
+<title>Most Travel Country</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -36,14 +36,14 @@
 </head>
 <body>
 <div class="container">
-  <h1>Suicide Rate per 100,000 people</h1>
+  <h1>Most Travel Country By Rank</h1>
   <table id="crimeTable">
     <!-- Table data will be inserted here -->
   </table>
 </div>
 
 <script>
-  fetch('sucide.csv')
+  fetch('../data/travel.csv')
     .then(response => response.text())
     .then(csv => {
       const rows = csv.split('\n');

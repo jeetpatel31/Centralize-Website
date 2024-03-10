@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Rate</title>
+<title>Suicide Rate</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -36,14 +36,14 @@
 </head>
 <body>
 <div class="container">
-  <h1>Happiness Index</h1>
+  <h1>Suicide Rate per 100,000 people</h1>
   <table id="crimeTable">
     <!-- Table data will be inserted here -->
   </table>
 </div>
 
 <script>
-  fetch('happy.csv')
+  fetch('../data/sucide.csv')
     .then(response => response.text())
     .then(csv => {
       const rows = csv.split('\n');

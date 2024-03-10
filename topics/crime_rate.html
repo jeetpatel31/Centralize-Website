@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sports Rate</title>
+<title>Crime Rates</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -36,14 +36,14 @@
 </head>
 <body>
 <div class="container">
-  <h1>Most Popular Sports Rank</h1>
+  <h1>Crime Rates</h1>
   <table id="crimeTable">
     <!-- Table data will be inserted here -->
   </table>
 </div>
 
 <script>
-  fetch('sport.csv')
+  fetch('../data/crime.csv')
     .then(response => response.text())
     .then(csv => {
       const rows = csv.split('\n');
