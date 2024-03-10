@@ -4,7 +4,7 @@ For the front end, I employed HTML5 for the structure, using semantic elements t
 
 The site dynamically loads and presents data on individual topic pages, such as crime rates, using JavaScript to fetch information from CSV files. This approach allows for easy updates and management of the content without directly altering the site's code. Each topic page is designed with simplicity and user readability in mind, featuring data in a clean, table format.
 
-sOverall, 'Info ALL' aims to serve as a comprehensive resource for users seeking reliable and up-to-date information on critical global issues, packaged in an intuitive and visually appealing web experience.
+Overall, 'Info ALL' aims to serve as a comprehensive resource for users seeking reliable and up-to-date information on critical global issues, packaged in an intuitive and visually appealing web experience.
 
 ![alt text](image.png)
 ![alt text](image-1.png)
