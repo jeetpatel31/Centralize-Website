@@ -9,4 +9,3 @@ Overall, 'Info ALL' aims to serve as a comprehensive resource for users seeking 
 ![alt text](image.png)
 ![alt text](image-1.png)
 ![alt text](image-2.png)
-<video controls src="WIN_20240218_20_09_26_Pro.mp4" title="Title"></video>
